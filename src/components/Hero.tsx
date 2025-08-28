@@ -94,7 +94,7 @@ const Hero = () => {
           
           {/* Tagline */}
           <p className="font-body text-lg text-muted-foreground max-w-lg mx-auto leading-relaxed font-extralight md:text-sm">
-            Where heritage craftsmanship meets contemporary luxury
+            Indo-Western fashion that's designed in the U.S. and crafted in India
           </p>
 
           {/* Direct Email Entry */}
