@@ -1,0 +1,322 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Luxury Indian Wear Design System - LAZRANI */
+
+@layer base {
+  :root {
+    /* Minimalist Cream & Gold Palette */
+    --background: 45 20% 95%; /* Warm cream background */
+    --foreground: 25 25% 25%; /* Soft dark gray */
+
+    /* Brand Palette */
+    --cream: 45 20% 95%; /* Primary cream background */
+    --cream-dark: 35 20% 85%; /* Subtle darker cream */
+    
+    --gold: 42 78% 60%; /* Elegant gold accent */
+    --gold-dark: 42 65% 45%; /* Deeper gold */
+    --gold-light: 42 85% 75%; /* Light gold */
+
+    /* Component Colors - Minimalist */
+    --card: var(--cream);
+    --card-foreground: var(--foreground);
+
+    --popover: var(--cream);
+    --popover-foreground: var(--foreground);
+
+    --primary: var(--gold); /* Gold primary */
+    --primary-foreground: var(--cream);
+
+    --secondary: var(--cream-dark); /* Subtle cream */
+    --secondary-foreground: var(--foreground);
+
+    --accent: var(--gold); /* Gold accent */
+    --accent-foreground: var(--foreground);
+
+    --muted: var(--cream-dark);
+    --muted-foreground: 25 15% 55%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: var(--cream);
+
+    --border: 35 15% 80%;
+    --input: 35 15% 80%;
+    --ring: var(--gold);
+
+    /* Luxury Gradients */
+    --gradient-maroon: linear-gradient(135deg, hsl(var(--maroon)), hsl(var(--maroon-dark)));
+    --gradient-navy: linear-gradient(135deg, hsl(var(--navy)), hsl(var(--navy-dark)));
+    --gradient-gold: linear-gradient(135deg, hsl(var(--gold-light)), hsl(var(--gold-dark)));
+    --gradient-royal: linear-gradient(135deg, hsl(var(--maroon)), hsl(var(--navy)));
+    --gradient-silk: linear-gradient(180deg, hsl(var(--cream)), hsl(var(--cream-dark)));
+
+    /* Luxury Shadows */
+    --shadow-royal: 0 20px 40px -10px hsl(var(--maroon) / 0.3);
+    --shadow-gold: 0 10px 30px -5px hsl(var(--gold) / 0.4);
+    --shadow-subtle: 0 5px 20px -5px hsl(345 30% 20% / 0.2);
+    --shadow-elegant: 0 25px 50px -15px hsl(var(--navy) / 0.4);
+
+    /* Animations & Transitions */
+    --transition-luxury: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-smooth: all 0.3s ease-in-out;
+    --transition-bounce: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    /* Dark mode for luxury brand */
+    --background: 345 100% 8%;
+    --foreground: 60 56% 96%;
+    --card: 345 100% 12%;
+    --card-foreground: 60 56% 96%;
+    --primary: 60 56% 96%;
+    --primary-foreground: 345 100% 15%;
+    --secondary: 207 51% 34%;
+    --secondary-foreground: 60 56% 96%;
+    --accent: 43 66% 65%;
+    --accent-foreground: 345 100% 15%;
+  }
+}
+
+@layer components {
+  /* Custom Typography Classes */
+  .font-display {
+    font-family: 'Playfair Display', serif;
+  }
+  
+  .font-body {
+    font-family: 'Inter', sans-serif;
+  }
+
+  /* Luxury Button Variants */
+  .btn-royal {
+    @apply bg-gradient-to-r from-maroon to-maroon-dark text-primary-foreground;
+    @apply border-2 border-gold shadow-royal;
+    @apply hover:shadow-gold transform hover:-translate-y-1;
+    @apply transition-all duration-300;
+  }
+
+  .btn-navy {
+    @apply bg-gradient-to-r from-navy to-navy-dark text-secondary-foreground;
+    @apply border-2 border-transparent hover:border-gold;
+    @apply shadow-elegant hover:shadow-gold;
+    @apply transform hover:-translate-y-1 transition-all duration-300;
+  }
+
+  .btn-gold {
+    @apply bg-gradient-to-r from-gold-light to-gold text-accent-foreground;
+    @apply border-2 border-gold-dark shadow-gold;
+    @apply hover:scale-105 transition-all duration-300;
+  }
+
+  /* Decorative Elements */
+  .diya-glow {
+    @apply relative;
+  }
+  
+  .diya-glow::before {
+    content: '';
+    @apply absolute inset-0 bg-gold rounded-full;
+    @apply opacity-20 animate-pulse;
+    filter: blur(8px);
+  }
+
+  /* Silk Texture Background */
+  .silk-texture {
+    background-image: 
+      radial-gradient(circle at 25% 25%, hsl(var(--gold) / 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 75% 75%, hsl(var(--maroon) / 0.05) 0%, transparent 50%);
+  }
+
+  /* Paisley Pattern Border */
+  .paisley-border {
+    position: relative;
+  }
+  
+  .paisley-border::after {
+    content: '❀ ❀ ❀ ❀ ❀';
+    @apply absolute left-1/2 transform -translate-x-1/2;
+    @apply text-gold text-2xl opacity-60;
+    bottom: -1rem;
+  }
+
+  /* Elegant Form Styles */
+  .luxury-input {
+    @apply bg-card border-2 border-border;
+    @apply focus:border-gold focus:ring-2 focus:ring-gold/20;
+    @apply placeholder:text-muted-foreground;
+    @apply transition-all duration-300;
+  }
+
+  .luxury-input:focus {
+    box-shadow: 0 0 0 3px hsl(var(--gold) / 0.1);
+  }
+}
+
+@layer utilities {
+  /* Custom Background Gradients */
+  .bg-gradient-royal {
+    background: var(--gradient-royal);
+  }
+  
+  .bg-gradient-maroon {
+    background: var(--gradient-maroon);
+  }
+  
+  .bg-gradient-navy {
+    background: var(--gradient-navy);
+  }
+  
+  .bg-gradient-gold {
+    background: var(--gradient-gold);
+  }
+  
+  .bg-gradient-silk {
+    background: var(--gradient-silk);
+  }
+
+  /* Custom Brand Colors */
+  .text-maroon { color: hsl(var(--maroon)); }
+  .text-navy { color: hsl(var(--navy)); }
+  .text-gold { color: hsl(var(--gold)); }
+  .bg-maroon { background-color: hsl(var(--maroon)); }
+  .bg-navy { background-color: hsl(var(--navy)); }
+  .bg-gold { background-color: hsl(var(--gold)); }
+  .border-gold { border-color: hsl(var(--gold)); }
+
+  /* Custom Shadows */
+  .shadow-royal { box-shadow: var(--shadow-royal); }
+  .shadow-gold { box-shadow: var(--shadow-gold); }
+  .shadow-elegant { box-shadow: var(--shadow-elegant); }
+  .shadow-subtle { box-shadow: var(--shadow-subtle); }
+
+  /* Animation Classes */
+  .animate-fade-in-up {
+    animation: fadeInUp 0.8s ease-out forwards;
+  }
+  
+  .animate-gold-shimmer {
+    animation: goldShimmer 2s ease-in-out infinite;
+  }
+
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes goldShimmer {
+    0%, 100% { box-shadow: 0 0 20px hsl(var(--gold) / 0.3); }
+    50% { box-shadow: 0 0 40px hsl(var(--gold) / 0.6); }
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+  }
+
+  /* Parallax Effect */
+  .parallax {
+    transform-style: preserve-3d;
+  }
+
+  .parallax-layer {
+    transform: translateZ(-1px) scale(2);
+  }
+}
+
+/* Magic cursor animations */
+:root {
+  --mouse-sparkles-glow-rgb: 186 164 118; /* Gold color matching brand */
+}
+
+.mouse-sparkles-star {
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+  transform-origin: center;
+}
+
+.mouse-sparkles-glow-point {
+  position: fixed;
+  pointer-events: none;
+  z-index: 9998;
+  width: 2px;
+  height: 2px;
+  background: radial-gradient(circle, rgb(var(--mouse-sparkles-glow-rgb)) 0%, transparent 70%);
+  border-radius: 50%;
+}
+
+@keyframes fall-1 {
+  0% {
+    transform: translate(0px, 0px) rotateX(45deg) rotateY(30deg) rotateZ(0deg) scale(0.25);
+    opacity: 0;
+  }
+  5% {
+    transform: translate(10px, -10px) rotateX(45deg) rotateY(30deg) rotateZ(0deg) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(25px, 200px) rotateX(180deg) rotateY(270deg) rotateZ(90deg) scale(1);
+    opacity: 0;
+  }
+}
+
+@keyframes fall-2 {
+  0% {
+    transform: translate(0px, 0px) rotateX(-20deg) rotateY(10deg) scale(0.25);
+    opacity: 0;
+  }
+  10% {
+    transform: translate(-10px, -5px) rotateX(-20deg) rotateY(10deg) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-10px, 160px) rotateX(-90deg) rotateY(45deg) scale(0.25);
+    opacity: 0;
+  }
+}
+
+@keyframes fall-3 {
+  0% {
+    transform: translate(0px, 0px) rotateX(0deg) rotateY(45deg) scale(0.5);
+    opacity: 0;
+  }
+  15% {
+    transform: translate(7px, 5px) rotateX(0deg) rotateY(45deg) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(20px, 120px) rotateX(-180deg) rotateY(-90deg) scale(0.5);
+    opacity: 0;
+  }
+}
