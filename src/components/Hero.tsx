@@ -30,10 +30,14 @@ const Hero = () => {
     }
 
     // Check if Supabase is available
-    if (!isSupabaseAvailable()) {
+    if (!isSupabaseAvailable() || !supabase) {
+      console.error('Supabase not configured:', {
+        available: isSupabaseAvailable(),
+        client: !!supabase
+      });
       toast({
-        title: "Service unavailable",
-        description: "Database connection is not available. Please try again later.",
+        title: "Service temporarily unavailable",
+        description: "We're having trouble connecting to our servers. Please try again later.",
         variant: "destructive",
       });
       return;
