@@ -1,5 +1,3 @@
-import embroideryDetail from "@/assets/embroidery-detail.jpg";
-
 const About = () => {
   return (
     <section className="py-24 bg-gradient-silk relative">
@@ -45,14 +43,15 @@ const About = () => {
               </div>
             </div>
 
-            {/* Image */}
+            {/* Image Placeholder */}
             <div className="relative">
-              <div className="relative overflow-hidden rounded-2xl shadow-elegant">
-                <img 
-                  src={embroideryDetail} 
-                  alt="Intricate Indian embroidery work" 
-                  className="w-full h-[600px] object-cover hover:scale-105 transition-transform duration-700"
-                />
+              <div className="relative overflow-hidden rounded-2xl shadow-elegant bg-gradient-to-br from-gold/20 to-gold/10">
+                <div className="w-full h-[600px] flex items-center justify-center">
+                  <div className="text-center">
+                    <p className="font-display text-2xl text-gold/60">Heritage Collection</p>
+                    <p className="font-body text-sm text-muted-foreground mt-2">Coming Soon</p>
+                  </div>
+                </div>
                 <div className="absolute inset-0 bg-gradient-to-t from-maroon/30 to-transparent"></div>
               </div>
               

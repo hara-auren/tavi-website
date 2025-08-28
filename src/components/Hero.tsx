@@ -45,7 +45,7 @@ const Hero = () => {
       // Save email to Supabase
       const { error } = await supabase!
         .from('waitlist')
-        .insert([{ email }]);
+        .insert([{ email }] as any);
 
       if (error) {
         console.error('Supabase error:', error);
