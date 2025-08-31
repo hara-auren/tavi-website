@@ -106,7 +106,7 @@ const Hero = () => {
                   placeholder="Enter email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="h-6 px-2 mr-1 text-xs border-0 bg-transparent text-foreground placeholder:text-muted-foreground font-body focus:ring-0 focus:outline-none rounded-full w-24"
+                  className="h-6 px-2 mr-1 text-xs border-0 bg-transparent text-foreground placeholder:text-muted-foreground font-body focus:ring-0 focus:outline-none rounded-full w-48"
                   disabled={isSubmitting}
                   onKeyPress={(e) => e.key === 'Enter' && handleSubmit()}
                 />
